@@ -18,7 +18,7 @@ class fileHandle:
                     return True
         else:
             os.chdir('C:')
-            os.makedirs("C:\Melody\Music")
+            os.makedirs("C://Melody//Music")
             cls.save(name)
             return True
 
@@ -26,7 +26,7 @@ class fileHandle:
     def PlaylistData(cls):
         files=[]
         if os.path.isdir("C://Melody//Music"):
-            for a,b,files in os.walk("C://Melody/Music",topdown=False):
+            for a,b,files in os.walk("C://Melody//Music",topdown=False):
                 pass
             
             if files!=[]:
