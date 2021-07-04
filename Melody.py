@@ -11,14 +11,11 @@ try:
     from tkscrolledframe import ScrolledFrame
 
 
-    def resource_path(relative_path):
-        base_path = getattr(sys, '_MEIPASS', os.path.dirname(os.path.abspath(__file__)))
-        return os.path.join(base_path, relative_path)
-
+    
 
     mixer.init()
     root = Tk()
-    root.iconbitmap(resource_path('images//Melody.ico'))
+    root.iconbitmap(('images//Melody.ico'))
     root.title("Melody")
     root.configure(bg='black')
     root.geometry("463x360+0+0")
@@ -41,7 +38,7 @@ try:
             self.root = root
             self.top = Toplevel(self.root)
             self.top.title('Melody/New-playlist')
-            self.top.iconbitmap(resource_path('images//Melody.ico'))
+            self.top.iconbitmap(('images//Melody.ico'))
             self.getSize()
             self.top.geometry(f'{self.top_width}x{self.top_height}+{self.X}+{self.Y}')
             self.top.transient(self.root)
@@ -64,8 +61,8 @@ try:
             buttonframe.pack(expand=True)
 
             self.name = StringVar()
-            playlistimage = PhotoImage(file=resource_path("images//playlist.png"))
-            pencilimage = PhotoImage(file=resource_path("images//pencil.png"))
+            playlistimage = PhotoImage(file=("images//playlist.png"))
+            pencilimage = PhotoImage(file=("images//pencil.png"))
 
             imagelabel = Label(labelframe, image=playlistimage)
             imagelabel.image = playlistimage  # keep a reference!
@@ -161,7 +158,7 @@ try:
             self.top = Toplevel(self.root)
             self.top.title('Melody/New-playlist')
             self.top.configure(bg='black')
-            self.top.iconbitmap(resource_path('images//Melody.ico'))
+            self.top.iconbitmap(('images//Melody.ico'))
             self.getSize()
             self.top.geometry(f'{self.top_width}x{self.top_height}+{self.X}+{self.Y}')
             self.top.transient(self.root)
@@ -183,8 +180,8 @@ try:
             buttonframe.pack(expand=True)
 
             self.name = StringVar()
-            playlistimage = PhotoImage(file=resource_path("images//playlist.png"))
-            pencilimage = PhotoImage(file=resource_path("images//pencil.png"))
+            playlistimage = PhotoImage(file=("images//playlist.png"))
+            pencilimage = PhotoImage(file=("images//pencil.png"))
 
             imagelabel = Label(labelframe, image=playlistimage)
             imagelabel.image = playlistimage  # keep a reference!
@@ -851,30 +848,30 @@ try:
 
     try:
         # ====================================images========================
-        play_option = PhotoImage(file=resource_path("images//play-button.png"))
-        pause_option = PhotoImage(file=resource_path("images//pause3.png"))
-        stop_option = PhotoImage(file=resource_path("images//stop-button.png"))
+        play_option = PhotoImage(file=("images//play-button.png"))
+        pause_option = PhotoImage(file=("images//pause3.png"))
+        stop_option = PhotoImage(file=("images//stop-button.png"))
 
-        trash2 = PhotoImage(file=resource_path("images//trash2.png"))
-        trash1 = PhotoImage(file=resource_path("images//trash1.png"))
-        songadd = PhotoImage(file=resource_path("images//songadd.png"))
+        trash2 = PhotoImage(file=("images//trash2.png"))
+        trash1 = PhotoImage(file=("images//trash1.png"))
+        songadd = PhotoImage(file=("images//songadd.png"))
 
-        repeatall = PhotoImage(file=resource_path("images//repeatall.png"))
-        repeatnone = PhotoImage(file=resource_path("images//repeatnone.png"))
-        repeatone = PhotoImage(file=resource_path("images//repeat-once.png"))
-        playimage = PhotoImage(file=resource_path("images//play4.png"))
-        pauseimage = PhotoImage(file=resource_path("images//pause4.png"))
-        forwardimage = PhotoImage(file=resource_path("images//nextmusic.png"))
-        stopimage = PhotoImage(file=resource_path("images//stop1.png"))
-        rewindimage = PhotoImage(file=resource_path("images//rewind1.png"))
-        minusimage = PhotoImage(file=resource_path("images//minus.png"))
-        plusimage = PhotoImage(file=resource_path("images//plus.png"))
-        speakerimage0 = PhotoImage(file=resource_path("images//speaker.png"))
-        speakerimage1 = PhotoImage(file=resource_path("images//speaker50.png"))
-        speakerimage2 = PhotoImage(file=resource_path("images//speaker100.png"))
-        speakerimage3 = PhotoImage(file=resource_path("images//speaker3.png"))
-        muteimage = PhotoImage(file=resource_path("images//mute.png"))
-        #loadimage = PhotoImage(file=resource_path("images//loader.png"))
+        repeatall = PhotoImage(file=("images//repeatall.png"))
+        repeatnone = PhotoImage(file=("images//repeatnone.png"))
+        repeatone = PhotoImage(file=("images//repeat-once.png"))
+        playimage = PhotoImage(file=("images//play4.png"))
+        pauseimage = PhotoImage(file=("images//pause4.png"))
+        forwardimage = PhotoImage(file=("images//nextmusic.png"))
+        stopimage = PhotoImage(file=("images//stop1.png"))
+        rewindimage = PhotoImage(file=("images//rewind1.png"))
+        minusimage = PhotoImage(file=("images//minus.png"))
+        plusimage = PhotoImage(file=("images//plus.png"))
+        speakerimage0 = PhotoImage(file=("images//speaker.png"))
+        speakerimage1 = PhotoImage(file=("images//speaker50.png"))
+        speakerimage2 = PhotoImage(file=("images//speaker100.png"))
+        speakerimage3 = PhotoImage(file=("images//speaker3.png"))
+        muteimage = PhotoImage(file=("images//mute.png"))
+        #loadimage = PhotoImage(file=("images//loader.png"))
     except Exception as e:
         print(e)
     # =========================================frame========================
