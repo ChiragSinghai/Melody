@@ -487,7 +487,7 @@ try:
                     playbutton['image'] = playimage
                     statusbar['text'] = f'{songlist.get(selected[0])}' + ' Paused'
             except Exception as e:
-                print('error',e)
+                #print('error',e)
                 delete()
         initial_time.after(300, initial_time_change)
 
