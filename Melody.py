@@ -11,7 +11,6 @@ try:
     from tkscrolledframe import ScrolledFrame
     fpath=''
 
-
     def resource_path(relative_path):
         base_path = getattr(sys, '_MEIPASS', os.path.dirname(os.path.abspath(__file__)))
         return os.path.join(base_path, relative_path)
@@ -31,9 +30,80 @@ try:
     scalemoved = closing = False
     songs = []
     saved = False
+    helpobj = None
 
 
     # ==================================classes==============
+    class help:
+        def __init__(self, root):
+            self.root = root
+            self.top = Toplevel(self.root)
+            self.top.title('Melody/Help')
+            self.top.iconbitmap((fpath + 'images//Melody.ico'))
+            self.getSize()
+            self.top.geometry(f'{self.top_width}x{self.top_height}+{self.X}+{self.Y}')
+            self.top.transient(self.root)
+            self.top.resizable(False, False)
+            self.top.grab_set()
+            self.design()
+            self.top.protocol("WM_DELETE_WINDOW", self.cancel)
+            self.top.bind('<Escape>', self.cancel)
+
+        def design(self):
+            self.vertical_scroll = Scrollbar(self.top)
+            self.vertical_scroll.pack(side=RIGHT, fill=Y)
+            self.txtobj = Text(self.top,yscrollcommand=self.vertical_scroll.set,wrap='word')
+            self.txtobj.pack(fill=BOTH,expand=True)
+            self.vertical_scroll.config(command=self.txtobj.yview)
+            self.insertText()
+
+        def insertText(self):
+            file = open(fpath+'Help.txt','r')
+            s = file.read()
+            self.txtobj.insert('1.0',s)
+            file.close()
+
+
+        def cancel(self, event=None):
+            global helpobj
+            self.top.destroy()
+            del helpobj
+
+        def getSize(self):
+            root_width = self.root.winfo_width()
+            root_height = self.root.winfo_height()
+            x = self.root.winfo_x()
+            y = self.root.winfo_y()
+            if root_width <= 500 and root_height <= 400:
+                self.top_width = 420
+                self.top_height = 330
+                self.X = (root_width // 2) - (self.top_width // 2) + x
+                self.Y = (root_height // 2) - (self.top_height // 2) + y
+
+            elif root_width <= 800 and root_height <= 550:
+                self.top_width = 440
+                self.top_height = 350
+                if root_width <= 500:
+                    self.top_width = 420
+                if root_height <= 400:
+                    self.top_height = 330
+                self.X = (root_width // 2) - (self.top_width // 2) + x
+                self.Y = (root_height // 2) - (self.top_height // 2) + y
+
+            else:
+                self.top_width = 570
+                self.top_height = 480
+                if root_width <= 800:
+                    self.top_width = 440
+                if root_height <= 550:
+                    self.top_height = 350
+                if root_width <= 500:
+                    self.top_width = 420
+                if root_height <= 400:
+                    self.top_height = 330
+
+                self.X = (root_width // 2) - (self.top_width // 2) + x
+                self.Y = (root_height // 2) - (self.top_height // 2) + y
 
 
     class newplaylist:
@@ -102,7 +172,7 @@ try:
                         songs.clear()
                         chill.cancel()
 
-                    elif (closing):
+                    elif closing:
                         currentplaylist = self.name.get()
                         saveplaylist()
 
@@ -211,7 +281,7 @@ try:
             global currentplaylist
             # noinspection PyShadowingNames
             name = self.name.get()
-            os.rename(r'Music\%s.txt' % (currentplaylist), r'Music\%s.txt' % name)
+            os.rename(r'Melody\Music\%s.txt' % (currentplaylist), r'Melody\Music\%s.txt' % name)
             currentplaylist = self.name.get()
             saveplaylist()
             title_change()
@@ -670,6 +740,9 @@ try:
         toggle()
         chill = AlbumsWindow(root)
 
+    def call_help():
+        global helpobj
+        helpobj = help(root)
 
     def callalbumwindow():
         global chill, saved
@@ -1023,7 +1096,8 @@ try:
     # Help
     helpmenu = Menu(menubar, tearoff=0)
     menubar.add_cascade(label="Help", menu=helpmenu)
-    helpmenu.add_command(label="About us", command='')
+    helpmenu.add_command(label="About us", command=call_help)
+
     # =====================================
     if len(argv) >= 2:
         add_file(argv[1])

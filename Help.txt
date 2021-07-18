@@ -1,0 +1,29 @@
+Instructions:
+Melody is open source music software where you can listen songs.
+It also comes with the feature where you can create and save you own playlist.
+
+Controls:
+Ctrl-N : To create a new playlist.
+Ctrl-S : To save playlist.
+Ctrl-Shift-S : to save the playlist with another name.
+Ctrl-O : To load your saved playlists.
+'+' : to increase volume
+'-' : to decrease volume
+Esc : to come back from the albums folder/open playlist window.
+spacebar : to pause and play song
+'M' : to mute/unmute songs
+
+The MIT License (MIT)
+
+Copyright (c) <year> <copyright holders>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+for any other query:
+contact me on : www.linkedin.com/in/Chirag-Jain361
+
+Thank You 
