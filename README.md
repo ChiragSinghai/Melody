@@ -16,8 +16,8 @@ create and traverse through multiple playlists developed using tkinter and pygam
 
 ## Installation
 ```
-git/clone/https://github.com/ChiragSinghai/Notepad_in_python.git
-cd ./Notepad_in_python
+git/clone/https://github.com/ChiragSinghai/Melody.git
+cd ./Melody
 ```
 
 ## Virtual Enviroment(venv)
